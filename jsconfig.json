@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",//项目根目录
+        "paths": {
+            "@/*": ["./*"]
+        }
+    },
+    "exclude": ["node_modules"] 
+}
