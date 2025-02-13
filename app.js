@@ -8,16 +8,16 @@ addAliases({
     "@":__dirname, 
 })
 const router = require('@/router')
+const responseHandler = require('@/config/result')
 
 
 
 app.use(json());
 app.use(bodyParser());
 app.use(cors());
+app.use(responseHandler);
+app.use(router.routes()).use(router.allowedMethods());//路由注册到中间件
 
-
-
-app.use(router.routes()).use(router.allowedMethods());
 app.listen(7000);
 console.log('7000端口已启动!!');
 
