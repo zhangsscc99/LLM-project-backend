@@ -1,0 +1,11 @@
+[2025-02-12T22:20:42.031] [ERROR] error - ReferenceError: abcd is not defined
+    at wxLogin (C:\Users\zhang\Desktop\AIGC-NODE\controller\user.js:7:9)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:261:18
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:266:33)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at errorHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\errorhandler.js:7:15)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at responseHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\result.js:12:11)

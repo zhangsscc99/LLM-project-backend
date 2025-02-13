@@ -9,13 +9,15 @@ addAliases({
 })
 const router = require('@/router')
 const responseHandler = require('@/config/result')
-
+// 捕获错误的中间件
+const errorHandler = require('@/config/errorhandler')
 
 
 app.use(json());
 app.use(bodyParser());
 app.use(cors());
 app.use(responseHandler);
+app.use(errorHandler);
 app.use(router.routes()).use(router.allowedMethods());//路由注册到中间件
 
 app.listen(7000);
