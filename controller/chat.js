@@ -1,8 +1,9 @@
 const OpenAI = require('openai');
 const {apiKey} = require("@/config/default").aliyun 
+const Validate = require("@/validate/index")
 const openai = new OpenAI(
     {
-        apiKey,
+        apiKey: "sk-18fcc076d5d746fea3c922d20aef7364",
         baseURL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
     }
@@ -10,14 +11,27 @@ const openai = new OpenAI(
 
 class ChatController {
     //对话， 流式输出
+    
     async chatMessage(ctx){
+        const { chatMessage } = ctx.request.body
+        // 校验
+        await Validate.isarrayCheck(chatMessage, 'chatMessage字段不能为空', 'chatMessage');
         const completion = await openai.chat.completions.create({
             model: "qwen-plus",
             messages: [
-                { role: "user", content: "你是谁？" }
+                { role: "system", content: "你是云南旅游小助手，名叫云游宝。可以协助制定旅游攻略，推荐景点和美食，提供车票和天气查询的服务。" },
+                ...chatMessage
             ], 
+            stream: true,
     });
-    console.log(JSON.stringify(completion));
+    // console.log(JSON.stringify(completion));
+    // 迭代
+    for await (const chunk of completion) {
+        console.log(JSON.stringify(chunk));
     }
+}
+
+
+
 }
 module.exports = new ChatController();

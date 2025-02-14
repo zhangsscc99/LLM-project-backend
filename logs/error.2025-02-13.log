@@ -1,0 +1,71 @@
+[2025-02-13T15:38:04.259] [ERROR] error - BadRequestError: 400 Output data may contain inappropriate content.
+    at APIError.generate (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\openai\error.js:45:20)
+    at OpenAI.makeStatusError (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\openai\core.js:299:33)
+    at OpenAI.makeRequest (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\openai\core.js:343:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async chatMessage (C:\Users\zhang\Desktop\AIGC-NODE\controller\chat.js:14:28)
+    at async errorHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\errorhandler.js:7:9)
+    at async responseHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\result.js:12:5)
+    at async cors (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\cors\index.js:109:16)
+    at async bodyParser (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-bodyparser\index.js:78:5) {
+  status: 400,
+  headers: {
+    'content-encoding': 'gzip',
+    'content-type': 'application/json',
+    date: 'Thu, 13 Feb 2025 21:38:05 GMT',
+    'eagleeye-traceid': 'bc58d792be1947d0e890febbf9f5290e',
+    'req-arrive-time': '1739482682373',
+    'req-cost-time': '2966',
+    'resp-start-time': '1739482685339',
+    server: 'istio-envoy',
+    'set-cookie': 'acw_tc=c6e2cf87-a077-9ab5-ae85-1a3778d8e469d59c475b580b0235516fcd80ed436e26;path=/;HttpOnly;Max-Age=1800',
+    'transfer-encoding': 'chunked',
+    vary: 'Origin,Access-Control-Request-Method,Access-Control-Request-Headers, Accept-Encoding',
+    'x-dashscope-call-gateway': 'true',
+    'x-envoy-upstream-service-time': '2966',
+    'x-request-id': 'c6e2cf87-a077-9ab5-ae85-1a3778d8e469'
+  },
+  request_id: 'c6e2cf87-a077-9ab5-ae85-1a3778d8e469',
+  error: {
+    code: 'data_inspection_failed',
+    param: null,
+    message: 'Output data may contain inappropriate content.',
+    type: 'data_inspection_failed'
+  },
+  code: 'data_inspection_failed',
+  param: null,
+  type: 'data_inspection_failed'
+}
+[2025-02-13T17:49:54.515] [ERROR] error - TypeError: Cannot read properties of undefined (reading 'chatMessage')
+    at chatMessage (C:\Users\zhang\Desktop\AIGC-NODE\controller\chat.js:18:42)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:261:18
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:266:33)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at errorHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\errorhandler.js:7:15)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at responseHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\result.js:12:11)
+[2025-02-13T17:50:38.817] [ERROR] error - TypeError: Cannot read properties of undefined (reading 'chatMessage')
+    at chatMessage (C:\Users\zhang\Desktop\AIGC-NODE\controller\chat.js:18:42)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:261:18
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:266:33)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at errorHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\errorhandler.js:7:15)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at responseHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\result.js:12:11)
+[2025-02-13T17:51:10.275] [ERROR] error - ReferenceError: chatMessage is not defined
+    at chatMessage (C:\Users\zhang\Desktop\AIGC-NODE\controller\chat.js:18:37)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:261:18
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:34:12
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\@koa\router\lib\router.js:266:33)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at errorHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\errorhandler.js:7:15)
+    at dispatch (C:\Users\zhang\Desktop\AIGC-NODE\node_modules\koa-compose\index.js:42:32)
+    at responseHandler (C:\Users\zhang\Desktop\AIGC-NODE\config\result.js:12:11)

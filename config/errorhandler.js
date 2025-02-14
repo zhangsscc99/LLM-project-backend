@@ -10,9 +10,10 @@ const errorHandler = async (ctx, next) => {
         logger.error(errorData);
         console.log('捕获到错误');
         // 接收参数校验的错误
-        if(errorData.code){
-            const {code, msg} = errorData;
-            ctx.send(null, code, msg);
+        if(errorData.validate === null){
+            const {code, msg, error} = errorData;
+            const errorVal = error || null
+            ctx.send(null, code, msg, errorVal);
         } else {
             console.log(errorData);
             const error = errorData.message || '异常错误，请查看服务器端日志';
