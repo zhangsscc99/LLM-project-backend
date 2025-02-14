@@ -1,5 +1,5 @@
 const OpenAI = require('openai');
-const {apiKey} = require("@/config/default").aliyun 
+const {apiKey, systemContent} = require("@/config/default").aliyun 
 const Validate = require("@/validate/index")
 const openai = new OpenAI(
     {
@@ -19,7 +19,7 @@ class ChatController {
         const completion = await openai.chat.completions.create({
             model: "qwen-plus",
             messages: [
-                { role: "system", content: "你是云南旅游小助手，名叫云游宝。可以协助制定旅游攻略，推荐景点和美食，提供车票和天气查询的服务。" },
+                { role: "system", content: systemContent },
                 ...chatMessage
             ], 
             stream: true,
